@@ -1,3 +1,14 @@
+# Project description
+
+Our goal is to introduce first order polymorphic types for functions, interfaces, structs in Go with the following approach:
+  - Extend the parser to support the `[T1, T2...]` notation
+  - Extend the typechecker to typecheck bounded parametric polymorphism, constrained by interfaces
+    * eg. `func join[T : Enumerable](collection T, separator String) { ...`
+  - Extend the compile and runtime representation of types, by adding generic functions and types
+  - Emitting a function that accepts all types that satisfy the constraints, and preserves the type instead of downcasting it
+  - Possibly optimizing by lazily emitting a specialized version for types that are small enough to be passed by value
+
+
 # The Go Programming Language
 
 Go is an open source programming language that makes it easy to build simple,
